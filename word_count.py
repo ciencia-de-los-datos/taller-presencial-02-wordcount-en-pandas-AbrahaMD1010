@@ -11,7 +11,8 @@ import pandas as pd
     # entrada en el DataFrame.
     #
 def load_input(input_directory):
-    filenames = glob.glob(f"{input_directory}\*.txt")
+    filenames = glob.glob(f"{input_directory}/*.txt")
+
 
     dataframes = [pd.read_csv(filename, sep="\t", header=None, names=["text"]) for filename in filenames]
     concatened_df = pd.concat(dataframes, ignore_index=True)
